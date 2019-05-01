@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity logic_gates is
+	port(
+			x1 : in std_logic;
+			x0 : in std_logic;
+			and_gate : out std_logic;
+			or_gate : out std_logic;
+			nand_gate : out std_logic;
+			nor_gate : out std_logic;
+			xor_gate : out std_logic;
+			xnor_gate : out std_logic);
+end logic_gates;
+
+architecture logic_gates of logic_gates is
+begin
+	and_gate <= x1 and x0;
+	or_gate <= x1 or x0;
+	nand_gate <=x1 nand x0;
+	nor_gate <=x1 nor x0;
+	xor_gate <= x1 xor x0;
+	xnor_gate <= x1 xnor x0;
+end logic_gates;
