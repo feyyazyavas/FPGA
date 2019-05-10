@@ -1,0 +1,26 @@
+|full_adder
+input1 => half_adder:HA1.ha_input1
+input2 => half_adder:HA1.ha_input2
+carryIn => half_adder:HA2.ha_input1
+sum <= half_adder:HA2.ha_sum
+carryOut <= carryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|half_adder:HA1
+ha_input1 => ha_sum.IN0
+ha_input1 => ha_carry.IN0
+ha_input2 => ha_sum.IN1
+ha_input2 => ha_carry.IN1
+ha_sum <= ha_sum.DB_MAX_OUTPUT_PORT_TYPE
+ha_carry <= ha_carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|half_adder:HA2
+ha_input1 => ha_sum.IN0
+ha_input1 => ha_carry.IN0
+ha_input2 => ha_sum.IN1
+ha_input2 => ha_carry.IN1
+ha_sum <= ha_sum.DB_MAX_OUTPUT_PORT_TYPE
+ha_carry <= ha_carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
