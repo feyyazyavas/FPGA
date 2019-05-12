@@ -1,0 +1,33 @@
+|binary_multiplier
+input_A[0] => and_gate.IN0
+input_A[0] => and_gate[1].IN0
+input_A[1] => and_gate[2].IN0
+input_A[1] => and_gate[3].IN0
+input_B[0] => and_gate.IN1
+input_B[0] => and_gate[2].IN1
+input_B[1] => and_gate[1].IN1
+input_B[1] => and_gate[3].IN1
+output_P[0] << and_gate.DB_MAX_OUTPUT_PORT_TYPE
+output_P[1] << half_adder:HA1.S
+output_P[2] << half_adder:HA2.S
+output_P[3] << half_adder:HA2.C
+
+
+|binary_multiplier|half_adder:HA1
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|binary_multiplier|half_adder:HA2
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
